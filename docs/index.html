@@ -1,0 +1,1270 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elonet | Python 3 | Formation 1</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#python-3-formation-1">Python 3 Formation 1</a></li>
+<li><a href="#fonctions">1 - Fonctions</a>
+<ul>
+<li><a href="#définition">Définition</a></li>
+<li><a href="#logique">Logique</a></li>
+<li><a href="#déclaration">Déclaration</a></li>
+<li><a href="#avantages">Avantages</a></li>
+<li><a href="#paramètres-par-défaut">Paramètres par défaut</a></li>
+<li><a href="#ordre-dappel">Ordre d’appel</a></li>
+</ul>
+</li>
+<li><a href="#exceptions">2 - Exceptions</a>
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#exceptions-personnalisées">Exceptions personnalisées</a></li>
+</ul>
+</li>
+<li><a href="#documentation">3 - Documentation</a>
+<ul>
+<li><a href="#bonne-pratique">Bonne pratique</a></li>
+<li><a href="#structure">Structure</a></li>
+</ul>
+</li>
+<li><a href="#bibliothèques">4 - Bibliothèques</a>
+<ul>
+<li><a href="#bibliothèque-standard">Bibliothèque standard</a></li>
+<li><a href="#bibliothèques-supplémentaires--pip">Bibliothèques supplémentaires : Pip</a></li>
+</ul>
+</li>
+<li><a href="#fichiers">5 - Fichiers</a>
+<ul>
+<li><a href="#cfg">CFG</a></li>
+<li><a href="#json">JSON</a></li>
+<li><a href="#ini">INI</a></li>
+</ul>
+</li>
+<li><a href="#requests">6 - Requests</a>
+<ul>
+<li><a href="#installation-1">Installation</a></li>
+<li><a href="#opérations-http">Opérations HTTP</a></li>
+<li><a href="#authentification">Authentification</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#docopt">7 - DocOpt</a>
+<ul>
+<li><a href="#exemple-sans-docopt">Exemple sans DocOpt</a></li>
+<li><a href="#exemple-avec-docopt">Exemple avec DocOpt</a></li>
+<li><a href="#installation-2">Installation</a></li>
+<li><a href="#structure-1">Structure</a></li>
+<li><a href="#hack">Hack</a></li>
+</ul>
+</li>
+<li><a href="#multi-fichier">8 - Multi fichier</a>
+<ul>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#packages">Packages</a></li>
+</ul>
+</li>
+<li><a href="#exercices">9 - Exercices</a>
+<ul>
+<li><a href="#exercice-1">Exercice 1</a></li>
+<li><a href="#exercice-2">Exercice 2</a></li>
+<li><a href="#exercice-3">Exercice 3</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="python-3-formation-1">Python 3 Formation 1</h1>
+<p><img src="https://elonet.fr/img/logo.png" alt="Elonet"></p>
+<h1 id="fonctions">1 - Fonctions</h1>
+<p>Assez vite, il devient indispensable de rendre notre code plus lisible, pour cela on découpe notre programme en “blocs” logiques, on utilise donc les fonctions.</p>
+<h2 id="définition">Définition</h2>
+<p>Une fonction possède :</p>
+<ul>
+<li>Un nom unique</li>
+<li>Une suite de paramètres (pas obligatoire)</li>
+<li>Une valeur de sortie (pas obligatoire)</li>
+</ul>
+<h2 id="logique">Logique</h2>
+<p>La fonction additionner prend 2 variables en paramètres (a et b) et retourne un résultat (15).</p>
+<div class="mermaid"><svg xmlns="http://www.w3.org/2000/svg" id="mermaid-svg-jE32sXjJqKtsssKs" height="100%" viewBox="0 0 661.375 254" style="max-width:661.375px;"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M127.96875,56L152.96875,56L201.5983606557377,81" marker-end="url(#arrowhead43)" style="fill:none"></path><defs><marker id="arrowhead43" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M119.703125,178L152.96875,178L201.5983606557377,153" marker-end="url(#arrowhead44)" style="fill:none"></path><defs><marker id="arrowhead44" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M365.28125,117L390.28125,117L415.28125,117" marker-end="url(#arrowhead45)" style="fill:none"></path><defs><marker id="arrowhead45" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(73.984375,56)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.984375" y="-36" width="107.96875" height="72"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.984375,-26)"><foreignObject width="87.96875" height="52"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">a = 10</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="B" transform="translate(73.984375,178)"><rect rx="0" ry="0" x="-45.71875" y="-36" width="91.4375" height="72"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.71875,-26)"><foreignObject width="71.4375" height="52"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">b = 5</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="C" transform="translate(271.625,117)"><rect rx="5" ry="5" x="-93.65625" y="-36" width="187.3125" height="72"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-83.65625,-26)"><foreignObject width="167.3125" height="52"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Additionner</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="D" transform="translate(518.328125,117)"><rect rx="0" ry="0" x="-103.046875" y="-36" width="206.09375" height="72"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-93.046875,-26)"><foreignObject width="186.09375" height="52"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Résultat = 15</div></foreignObject></g></g></g></g></g></g></svg></div>
+<h2 id="déclaration">Déclaration</h2>
+<p>Une fonction démarre par le mot clé <strong>def</strong><br>
+On indique un retour avec le mot clé <strong>return</strong></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>nom_fonction<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token comment"># Votre code</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span> <span class="token operator">+</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">additionner</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> additionner<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token number">15</span>
+</code></pre>
+<h3 id="exemple">Exemple</h3>
+<p>Prenons le cas d’un script qui demande à l’utilisateur de répondre par <code>yes</code> ou par <code>no</code><br>
+Sans les fonctions, le code peut ressembler à ça :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Script de configuration du serveur"</span><span class="token punctuation">)</span>  
+  
+reponse <span class="token operator">=</span> <span class="token string">""</span>  
+<span class="token keyword">while</span> reponse <span class="token operator">!=</span> <span class="token string">'yes'</span> <span class="token operator">and</span> reponse <span class="token operator">!=</span> <span class="token string">'no'</span><span class="token punctuation">:</span>  
+    reponse <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Voulez vous continuer ? (yes|no) : "</span><span class="token punctuation">)</span>  
+  
+<span class="token keyword">if</span> reponse <span class="token operator">==</span> <span class="token string">'yes'</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous voulez continuer"</span><span class="token punctuation">)</span>  
+<span class="token keyword">else</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous souhaitez quitter"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Niveau lisibilité c’est acceptable, car notre code est simple, voyons avec une fonction</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># Définition de la fonction</span>
+<span class="token keyword">def</span> <span class="token function">ask_yes_no</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+  reponse <span class="token operator">=</span> <span class="token string">""</span>  
+  <span class="token keyword">while</span> reponse <span class="token operator">!=</span> <span class="token string">'yes'</span> <span class="token operator">and</span> reponse <span class="token operator">!=</span> <span class="token string">'no'</span><span class="token punctuation">:</span>  
+        reponse <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Voulez vous continuer ? (yes|no) : "</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> reponse <span class="token operator">==</span> <span class="token string">'yes'</span>  
+<span class="token comment"># Appel quelque part dans notre code </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Script de configuration du serveur"</span><span class="token punctuation">)</span>  
+<span class="token keyword">if</span> ask_yes_no<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous voulez continuer"</span><span class="token punctuation">)</span>  
+<span class="token keyword">else</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous souhaiter quitter"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>À l’aide d’une fonction, notre logique est passée de 8 instructions à 5 et on gagne en visibilité.</p>
+<h2 id="avantages">Avantages</h2>
+<p>L’un des principaux avantages des fonctions est que nous n’avons pas besoin de savoir ce qu’il se passe à l’intérieur d’une fonction pour l’utilisateur, il suffit juste de savoir l’utiliser.<br>
+Reprenons l’exemple de la question <code>Voulez vous continuer ? (yes|no)</code><br>
+Si on souhaite que la question soit proposée à l’aide d’une boite de dialogue, il suffit de modifier le code à l’intérieur de <code>ask_yes_no()</code> sans toucher à notre logique</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">ask_yes_no</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">import</span> tkinter  
+    <span class="token keyword">from</span> tkinter <span class="token keyword">import</span> messagebox  
+  
+    <span class="token keyword">return</span> messagebox<span class="token punctuation">.</span>askokcancel<span class="token punctuation">(</span><span class="token string">"Titre"</span><span class="token punctuation">,</span> <span class="token string">"Voulez vous continuer ?"</span><span class="token punctuation">)</span>  
+<span class="token comment"># On n'a pas modifié la suite de notre code</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Script de configuration du serveur"</span><span class="token punctuation">)</span>  
+<span class="token keyword">if</span> ask_yes_no<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous voulez continuer"</span><span class="token punctuation">)</span>  
+<span class="token keyword">else</span><span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Vous souhaitez quitter"</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="paramètres-par-défaut">Paramètres par défaut</h2>
+<p>Il est possible de spécifier une valeur par défaut à un ou plusieurs arguments dans une fonction<br>
+Exemple:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span><span class="token punctuation">(</span>prefix<span class="token punctuation">,</span> nom<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>prefix <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> nom<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>
+Hello World
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"you"</span><span class="token punctuation">)</span>
+Hello you
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>La partie intéressante est <code>nom="Word"</code>, nous définissons la valeur de <code>nom</code> à <code>World</code> par défaut</p>
+<h3 id="contrainte">Contrainte</h3>
+<p>Une fois que l’on définit un argument avec une valeur par défaut, la suite des arguments doit posséder une valeur par défaut<br>
+Exemple qui ne fonctionne pas:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction</span><span class="token punctuation">(</span>prefix<span class="token punctuation">,</span> separator<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>prefix <span class="token operator">+</span> seperator <span class="token operator">+</span> message<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">1</span>
+SyntaxError<span class="token punctuation">:</span> non<span class="token operator">-</span>default argument follows default argument
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>Exemple qui fonctionne :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span><span class="token punctuation">(</span>prefix<span class="token punctuation">,</span> separator<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>prefix <span class="token operator">+</span> separator <span class="token operator">+</span> message<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">,</span> <span class="token string">"You"</span><span class="token punctuation">)</span>
+Hello You
+</code></pre>
+<h3 id="spécifier-un-paramètre">Spécifier un paramètre</h3>
+<p>Il est possible de spécifier la valeur d’un paramètre lors de l’appel à une fonction<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span><span class="token punctuation">(</span>prefix<span class="token punctuation">,</span> separator<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">,</span> suffix<span class="token operator">=</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>prefix <span class="token operator">+</span> separator <span class="token operator">+</span> message <span class="token operator">+</span> suffix<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">1</span>
+SyntaxError<span class="token punctuation">:</span> positional argument follows keyword argument
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">)</span>
+Hello World<span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">"World"</span><span class="token punctuation">,</span> suffix<span class="token operator">=</span><span class="token string">"!"</span><span class="token punctuation">)</span>
+Hello World!
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>Comme pour les paramètres par défaut, une fois qu’on a commencé à spécifier une valeur, il faut continuer.</p>
+<h2 id="ordre-dappel">Ordre d’appel</h2>
+<p>Il est possible et fréquent d’utiliser des fonctions en paramètre d’autres fonctions<br>
+Exemple:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  result <span class="token operator">=</span> a <span class="token operator">+</span> b
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0} + {1} = {2}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">return</span> result
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">sub</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  result <span class="token operator">=</span> a <span class="token operator">-</span> b
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0} - {1} = {2}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">return</span> result
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> resultat <span class="token operator">=</span> sub<span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token number">3</span> <span class="token operator">+</span> <span class="token number">10</span> <span class="token operator">=</span> <span class="token number">13</span>
+<span class="token number">13</span> <span class="token operator">-</span> <span class="token number">5</span> <span class="token operator">=</span> <span class="token number">8</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> resultat
+<span class="token number">8</span>
+</code></pre>
+<p>La valeur de sortie de <code>add</code> sera calculée avant d’exécuter <code>sub</code>.</p>
+<h1 id="exceptions">2 - Exceptions</h1>
+<p>Les exceptions nous permettent d’intercepter des erreurs dans notre code.<br>
+C’est très pratique, car de base, si Python rencontre une erreur, il arrêtera l’exécution de notre programme.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  maListe <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>maListe<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Fonction OK"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">3</span><span class="token punctuation">,</span> <span class="token keyword">in</span> fonction_test
+IndexError<span class="token punctuation">:</span> <span class="token builtin">list</span> index out of <span class="token builtin">range</span>
+</code></pre>
+<p>Si nous essayons d’accéder au 6e élément d’une liste de 5 éléments, Python lance une erreur et arrête notre programme au lieu de nous afficher <code>Fonction OK</code>.<br></p>
+<blockquote>
+<p>La liste des exceptions fournies par Python est disponible à l’adresse suivante : <a href="https://docs.python.org/3/library/exceptions.html">https://docs.python.org/3/library/exceptions.html</a></p>
+</blockquote>
+<h2 id="usage">Usage</h2>
+<p>Une exception est composée d’au moins 2 blocs d’instructions :</p>
+<ul>
+<li>Les instructions pouvant potentiellement poser un problème</li>
+<li>Les instructions à exécuter si une erreur survient<br>
+Les mots clés sont <strong>try</strong> et <strong>except</strong></li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+  <span class="token comment"># Code problématique</span>
+<span class="token keyword">except</span> <span class="token operator">&lt;</span>type_exception<span class="token operator">&gt;</span><span class="token punctuation">:</span>
+  <span class="token comment"># Code en cas d'erreur</span>
+</code></pre>
+<p>Reprenons l’exemple de notre fonction <code>fonction_test</code></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  maListe <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">print</span><span class="token punctuation">(</span>maListe<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>                   <span class="token comment"># Erreur, indice trop grand</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">except</span> IndexError<span class="token punctuation">:</span>                   <span class="token comment"># On intercepte les erreurs de type IndexError</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Une erreur dans l'indice"</span><span class="token punctuation">)</span>   <span class="token comment"># On affiche une message d'erreur personnalisé</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Fonction OK"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Une erreur dans l'indice
+Fonction OK                               <span class="token comment"># La fonction va jusqu'au bout</span>
+</code></pre>
+<h3 id="finally">Finally</h3>
+<p>Il est possible d’avoir plus de contrôle sur nos exceptions à l’aide du mot clé <strong>finally</strong> qui permet d’exécuter des instructions, qu’il y ait eu erreur ou non.<br>
+Exemple:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Ouverture de la base de données"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">try</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Récupération d'un élément"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">raise</span> IndexError<span class="token punctuation">(</span><span class="token string">"ID introuvable"</span><span class="token punctuation">)</span>        <span class="token comment"># On jette une exception</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">except</span> IndexError<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Erreur lors de la récupération de l'élément..."</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>                                 <span class="token comment"># On retourne -1 indiquant une erreur</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">finally</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Fermeture de la base de données"</span><span class="token punctuation">)</span>   <span class="token comment"># Via finally le code est quand même exécuté</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> resultat <span class="token operator">=</span> fonction_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Ouverture de la base de données
+Récupération d'un élément
+Erreur lors de la récupération de l'élément <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+Fermeture de la base de donnée
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> resultat
+<span class="token operator">-</span><span class="token number">1</span>
+</code></pre>
+<h3 id="raise">Raise</h3>
+<p>Le mot clé <strong>raise</strong> nous permet de jeter une exception quand on considère qu’il y a une erreur, par exemple, si on attend un entier strictement positif et que l’utilisateur nous donne un entier négatif.<br>
+Exemple:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">def</span> <span class="token function">fonction_test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  valeur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Entrez un entier positif : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  <span class="token keyword">if</span> valeur <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>   <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"Entier positif 0 &lt; x &lt; +inf"</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fonction_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Entrez un entier positif <span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+  File <span class="token string">"&lt;stdin&gt;"</span><span class="token punctuation">,</span> line <span class="token number">4</span><span class="token punctuation">,</span> <span class="token keyword">in</span> fonction_test
+ValueError<span class="token punctuation">:</span> Entier positif <span class="token number">0</span> <span class="token operator">&lt;</span> x <span class="token operator">&lt;</span> <span class="token operator">+</span>inf
+</code></pre>
+<h2 id="exceptions-personnalisées">Exceptions personnalisées</h2>
+<p>Il est possible de créer nos propres exceptions pour rendre nos erreurs plus claires.<br>
+Exemple d’une exception indiquant qu’un nombre négatif :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> <span class="token class-name">NegativeValueError</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  
+  
+  
+<span class="token keyword">def</span> <span class="token function">fonction_test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    valeur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Entrez un entier positif : "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">if</span> valeur <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>  
+        <span class="token keyword">raise</span> NegativeValueError<span class="token punctuation">(</span><span class="token string">"Entier positif 0 &lt; x &lt; +inf"</span><span class="token punctuation">)</span>  
+  
+<span class="token keyword">try</span><span class="token punctuation">:</span>  
+    fonction_test<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token keyword">except</span> NegativeValueError<span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Valeur négative"</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>Nous verrons <code>class</code>, <code>*args</code> et <code>**kwargs</code> dans le chapitre dédié à l’objet</p>
+</blockquote>
+<h1 id="documentation">3 - Documentation</h1>
+<p>La documentation est la chose <strong>la plus importante</strong> lors de nos développements, c’est d’autant plus vrai en Python qui possède un langage dynamique.<br>
+Sinon comment savoir ce qu’attend ou retourne une fonction ?<br>
+D’un jour à l’autre on s’y retrouve, 6 mois plus tard c’est une autre histoire.</p>
+<h2 id="bonne-pratique">Bonne pratique</h2>
+<p>Plus une fonction est documentée mieux c’est, il arrive souvent qu’une fonction contienne plus de documentation que de code.<br>
+Une documentation commence par <code>"""</code> et termine par <code>"""</code><br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">additionner</span><span class="token punctuation">(</span>nombre1<span class="token punctuation">,</span> nombre2<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+  <span class="token triple-quoted-string string">"""  
+  Additionne le nombre 1 et le nombre 2  
+  
+  :exemple: 
+  &gt;&gt;&gt; additionner(1, 2.5)
+  3.5  
+  
+  :param nombre1: Nombre 1  
+  :type nombre1: int|float|complex
+  
+  :param nombre2:  
+  :type nombre2: int|float|complex
+   
+  :return: nombre1 + nombre2  
+  :rtype: int|float|complex  
+  """</span>
+  <span class="token keyword">return</span> nombre1 <span class="token operator">+</span> nombre2
+</code></pre>
+<p>Ainsi un autre développeur a juste à regarder la documentation pour pouvoir utiliser notre fonction.</p>
+<h2 id="structure">Structure</h2>
+<p>Une documentation d’une fonction est composée de :</p>
+<ul>
+<li>Une explication</li>
+<li>Un exemple quand c’est possible</li>
+<li>La liste des paramètres et leurs types possibles</li>
+<li>Ce que retourne la fonction et le(s) type(s) de sortie</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token operator">&lt;</span>nom_fonction<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span><span class="token punctuation">,</span> etc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token string">""</span>"
+  <span class="token operator">&lt;</span>description<span class="token operator">&gt;</span>
+  
+  <span class="token punctuation">:</span>exemple<span class="token punctuation">:</span>
+  <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>nom_fonction<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>sortie<span class="token operator">&gt;</span>
+  
+  <span class="token punctuation">:</span>param <span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span><span class="token punctuation">:</span> Description
+  <span class="token punctuation">:</span><span class="token builtin">type</span> <span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span> <span class="token punctuation">:</span> Types possible
+  
+  <span class="token punctuation">:</span>param <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span><span class="token punctuation">:</span> Description
+  <span class="token punctuation">:</span><span class="token builtin">type</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span> <span class="token punctuation">:</span> Types possible
+  <span class="token punctuation">:</span><span class="token keyword">return</span><span class="token punctuation">:</span> <span class="token operator">&lt;</span>param_1<span class="token operator">&gt;</span> <span class="token operator">+</span> <span class="token operator">&lt;</span>param_2<span class="token operator">&gt;</span>
+  <span class="token punctuation">:</span>rtype<span class="token punctuation">:</span> Types possible
+</code></pre>
+<blockquote>
+<p>J’insiste sur l’importance de la documentation.<br><br>
+Il est possible de créer des templates de documentation dans PyCharm.</p>
+</blockquote>
+<h1 id="bibliothèques">4 - Bibliothèques</h1>
+<p>L’une des forces de Python est la quantité de bibliothèques disponibles, quand vous êtes face à un besoin, il est rare de ne pas trouver de solutions existantes.</p>
+<h2 id="bibliothèque-standard">Bibliothèque standard</h2>
+<p>Python possède déjà un grand nombre d’outils présents dans la bibliothèque standard par exemple :</p>
+<ul>
+<li>Le traitement de fichiers</li>
+<li>Le traitement de données au format json</li>
+<li>Des outils mathématiques</li>
+<li>Etc …</li>
+</ul>
+<blockquote>
+<p><a href="https://docs.python.org/fr/3.6/library/index.html">https://docs.python.org/fr/3.6/library/index.html</a></p>
+</blockquote>
+<h3 id="utilisation-dune-bibliothèque">Utilisation d’une bibliothèque</h3>
+<p>Les mots clés pour l’utilisation d’une bibliothèque sont <code>from</code> et <code>import</code></p>
+<p><code>import</code> permet d’ajouter des morceaux entier de bibliothèques dans notre code contrairement à <code>from</code> qui importe uniquement des morceaux précis.</p>
+<p>Exemple d’un code utilisant <code>import</code> permettant d’avoir le chemin absolu d’un fichier présent dans le <strong>même</strong> dossier que le fichier Python exécuté :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+current_directory <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+file_name <span class="token operator">=</span> <span class="token string">'test.txt'</span>
+file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>current_directory<span class="token punctuation">,</span> file_name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
+</code></pre>
+<p>Ici on importe l’ensemble de la bibliothèque <code>os</code>, puis on appel les fonctions <code>dirname</code> et <code>join</code> présentes le module <code>path</code></p>
+<p>Le même code en utilisant <code>from</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> os<span class="token punctuation">.</span>path <span class="token keyword">import</span> dirname<span class="token punctuation">,</span> join
+current_directory <span class="token operator">=</span> dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+file_name <span class="token operator">=</span> <span class="token string">'test.txt'</span>
+file_path <span class="token operator">=</span> join<span class="token punctuation">(</span>current_directory<span class="token punctuation">,</span> file_name<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
+</code></pre>
+<p>Ici on importe uniquement les fonctions <code>dirname</code> et <code>join</code> présentes dans le module <code>path</code> de la bibliothèque <code>os</code></p>
+<p>Alors lequel choisir ? En fait cela dépend des cas et du développeur, personnellement dans un code de 300 lignes je trouve beaucoup plus lisible et compréhensible un <code>os.path.join</code> qu’un <code>join</code> ou je serais obligé d’aller vérifier la documentation pour être sûr qu’il s’agisse d’une composition de chemins.</p>
+<p>Par contre, je trouve superflu d’utiliser <code>math.sqrt</code> au lieu de simplement <code>sqrt</code> (racine carrée)</p>
+<h2 id="bibliothèques-supplémentaires--pip">Bibliothèques supplémentaires : Pip</h2>
+<p>Pip est l’outil d’installation de bibliothèques de prédilection, de base il permet d’accéder aux bibliothèques présentes sur <a href="https://pypi.org/">https://pypi.org/</a> (Python Package Index)</p>
+<h3 id="usage-1">Usage</h3>
+<p>Installer une bibliothèque :</p>
+<pre><code>pip install &lt;nom_bibliothèque&gt;
+</code></pre>
+<p>Connaitre l’ensemble des bibliothèques installées :</p>
+<pre><code>pip freeze
+</code></pre>
+<p>Installer des bibliothèques depuis un fichier <code>requirements.txt</code> :</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<h1 id="fichiers">5 - Fichiers</h1>
+<p>Dans un programme, il est fréquent de devoir manipuler des fichiers, que ce soit en tant que paramètres de configuration ou en tant que sortie.<br>
+Python nous permet de traiter les fichiers de manière très simple.</p>
+<h2 id="cfg">CFG</h2>
+<p>Exemple d’un fichier <code>sample.cfg</code> :</p>
+<pre><code>KEY1="VALUE1"  
+KEY2="VALUE2"  
+KEY3="VALUE3"  
+KEY4="VALUE4", "VALUE5"
+</code></pre>
+<h3 id="installation">Installation</h3>
+<p>Le plus simple est d’utiliser la bibliothèque <code>configobj</code> :</p>
+<blockquote>
+<p>Rappel : Il est préférable de créer / utiliser un environnement virtuel</p>
+</blockquote>
+<pre><code>pip install configobj
+</code></pre>
+<h3 id="usage-2">Usage</h3>
+<p>Pour utiliser <code>configobj</code> il suffit de faire l’import correspondant et de fournir le chemin du fichier.</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> configobj <span class="token keyword">import</span> ConfigObj
+config <span class="token operator">=</span> ConfigObj<span class="token punctuation">(</span><span class="token operator">&lt;</span>path<span class="token operator">&gt;</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="lecture">Lecture</h3>
+<p>Créons un fichier <code>test_cfg.py</code> se trouvant dans le même dossier que le fichier <code>sample.cfg</code></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">from</span> configobj <span class="token keyword">import</span> ConfigObj
+<span class="token comment"># On récupère le chemin du dossier contenant le fichier</span>
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+<span class="token comment"># On crée le chemin vers notre fichier de configuration</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'sample.cfg'</span><span class="token punctuation">)</span>
+<span class="token comment"># Lecture du fichier</span>
+config <span class="token operator">=</span> ConfigObj<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+<span class="token comment"># Sortie</span>
+<span class="token punctuation">{</span><span class="token string">'KEY1'</span><span class="token punctuation">:</span> <span class="token string">'VALUE1'</span><span class="token punctuation">,</span> <span class="token string">'KEY2'</span><span class="token punctuation">:</span> <span class="token string">'VALUE2'</span><span class="token punctuation">,</span> <span class="token string">'KEY3'</span><span class="token punctuation">:</span> <span class="token string">'VALUE3'</span><span class="token punctuation">,</span> <span class="token string">'KEY4'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'VALUE4'</span><span class="token punctuation">,</span> <span class="token string">'VALUE5'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre>
+<p>Comme on peut le voir, la bibliothèque <code>configobj</code> nous permet de lire très facilement les fichiers <code>.cfg</code> en nous retournant un dictionnaire</p>
+<h3 id="écriture">Écriture</h3>
+<p>Écrire un fichier <code>.cfg</code> est aussi simple que de le lire, on importe la bibliothèque, on crée une configuration et on sauvegarde le résultat.</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">from</span> configobj <span class="token keyword">import</span> ConfigObj
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'test.cfg'</span><span class="token punctuation">)</span>
+config <span class="token operator">=</span> ConfigObj<span class="token punctuation">(</span><span class="token punctuation">)</span>
+config<span class="token punctuation">.</span>filename <span class="token operator">=</span> path
+config<span class="token punctuation">[</span><span class="token string">'CLE_1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Bonjour"</span>
+config<span class="token punctuation">[</span><span class="token string">'CLE_2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"a"</span>
+config<span class="token punctuation">[</span><span class="token string">'CLE_3'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"tous"</span>
+config<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+<span class="token comment"># sample.cfg après exécution de notre programme</span>
+CLE_1 <span class="token operator">=</span> Bonjour  
+CLE_2 <span class="token operator">=</span> a  
+CLE_3 <span class="token operator">=</span> tous
+</code></pre>
+<h3 id="multi-niveau">Multi niveau</h3>
+<p>Il est tout à fait possible d’agencer les données sur plusieurs niveaux exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">from</span> configobj <span class="token keyword">import</span> ConfigObj
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'test.cfg'</span><span class="token punctuation">)</span>
+config <span class="token operator">=</span> ConfigObj<span class="token punctuation">(</span><span class="token punctuation">)</span>
+config<span class="token punctuation">.</span>filename <span class="token operator">=</span> path
+config<span class="token punctuation">[</span><span class="token string">'CLE_1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Bonjour"</span>
+config<span class="token punctuation">[</span><span class="token string">'CLE_2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"a"</span>
+config<span class="token punctuation">[</span><span class="token string">'CLE_3'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"tous"</span>
+redis_config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"host"</span><span class="token punctuation">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+    <span class="token string">"port"</span><span class="token punctuation">:</span> <span class="token number">1883</span><span class="token punctuation">,</span>
+    <span class="token string">"credentials"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"username"</span><span class="token punctuation">:</span> <span class="token string">"toto"</span><span class="token punctuation">,</span>
+        <span class="token string">'password'</span><span class="token punctuation">:</span> <span class="token string">"asticot"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+config<span class="token punctuation">[</span><span class="token string">'REDIS'</span><span class="token punctuation">]</span> <span class="token operator">=</span> redis_config
+config<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+</code></pre>
+<p>Ce qui donne le fichier de sortie suivant :</p>
+<pre><code>CLE_1 = Bonjour  
+CLE_2 = a  
+CLE_3 = tous  
+[REDIS]  
+host = localhost  
+port = 1883  
+[[credentials]]  
+username = toto  
+password = asticot
+</code></pre>
+<h2 id="json">JSON</h2>
+<p>Exemple d’un fichier <code>sample.json</code> :</p>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>  
+  <span class="token string">"colors"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>  
+    <span class="token punctuation">{</span>  
+      <span class="token string">"color"</span><span class="token punctuation">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+      <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"hue"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token punctuation">:</span> <span class="token string">"primary"</span><span class="token punctuation">,</span>  
+      <span class="token string">"code"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  
+        <span class="token string">"rgba"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"hex"</span><span class="token punctuation">:</span> <span class="token string">"#000"</span>
+      <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+    <span class="token punctuation">{</span>  
+      <span class="token string">"color"</span><span class="token punctuation">:</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+      <span class="token string">"category"</span><span class="token punctuation">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+      <span class="token string">"code"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"rgba"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"hex"</span><span class="token punctuation">:</span> <span class="token string">"#FFF"</span>
+      <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+  <span class="token punctuation">]</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="usage-3">Usage</h3>
+<p>Python contient déjà la bibliothèque nous permettant de lire et écrire des fichiers JSON</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> json
+</code></pre>
+<h3 id="lecture-1">Lecture</h3>
+<p>Créons un fichier <code>test_json.py</code> se trouvant dans le même dossier que le fichier <code>sample.json</code>.<br>
+Il suffit ensuite d’ouvrir le fichier <code>.json</code> à l’aide de la fonction <code>open</code><br><br>
+La lecture du fichier <code>.json</code> est faite à l’aide de la fonction <code>load</code></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">import</span> json
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'sample.json'</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token keyword">as</span> json_file<span class="token punctuation">:</span>
+    config <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>L’utilisation de with nous permet d’être sûr que notre fichier sera fermé à la fin du bloc d’instructions</p>
+</blockquote>
+<h3 id="écriture-1">Écriture</h3>
+<p>Écrire un fichier <code>.json</code> est aussi simple que de le lire :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">import</span> json
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'test.json'</span><span class="token punctuation">)</span>
+config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"host"</span><span class="token punctuation">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+    <span class="token string">"port"</span><span class="token punctuation">:</span> <span class="token number">3030</span><span class="token punctuation">,</span>
+    <span class="token string">"public"</span><span class="token punctuation">:</span> <span class="token string">"../public/"</span><span class="token punctuation">,</span>
+    <span class="token string">"paginate"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"default"</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        <span class="token string">"max"</span><span class="token punctuation">:</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"mongodb"</span><span class="token punctuation">:</span> <span class="token string">"mongodb://localhost:27017/api"</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> json_file<span class="token punctuation">:</span>
+    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>config<span class="token punctuation">,</span> json_file<span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+</code></pre>
+<p>On indique qu’on souhaite ouvrir le fichier en écriture à l’aide de <code>'w'</code> pour write<br><br>
+On enregistre ensuite notre dictionnaire à l’aide de fonction <code>dump</code></p>
+<h2 id="ini">INI</h2>
+<p>Exemple d’un fichier <code>sample.ini</code> :</p>
+<pre class=" language-ini"><code class="prism  language-ini"><span class="token selector">[Apache]</span>  
+<span class="token constant">port</span><span class="token attr-value"><span class="token punctuation">=</span>80  </span>
+<span class="token constant">timeout</span><span class="token attr-value"><span class="token punctuation">=</span>60  </span>
+  
+<span class="token selector">[Mqtt]</span>  
+<span class="token constant">port</span><span class="token attr-value"><span class="token punctuation">=</span>1883  </span>
+<span class="token constant">timeout</span><span class="token attr-value"><span class="token punctuation">=</span>30  </span>
+  
+<span class="token selector">[MongoDb]</span>  
+<span class="token constant">port</span><span class="token attr-value"><span class="token punctuation">=</span>27017  </span>
+<span class="token constant">timeout</span><span class="token attr-value"><span class="token punctuation">=</span>45</span>
+</code></pre>
+<h3 id="usage-4">Usage</h3>
+<p>Python contient déjà la bibliothèque nous permettant de lire et écrire des fichiers INI</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> configparser <span class="token keyword">import</span> ConfigParser
+</code></pre>
+<h3 id="lecture-2">Lecture</h3>
+<p>Créons un fichier <code>test_ini.py</code> dans le même dossier que le fichier <code>sample.ini</code><br>
+On peut :</p>
+<ul>
+<li>Récupérer la liste des sections du fichier</li>
+<li>Récupérer les options d’une section</li>
+<li>Récupérer la valeur d’une option</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">from</span> configparser <span class="token keyword">import</span> ConfigParser
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'sample.ini'</span><span class="token punctuation">)</span>
+parser <span class="token operator">=</span> ConfigParser<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># Création d'un parseur de .ini</span>
+parser<span class="token punctuation">.</span>read<span class="token punctuation">(</span>path<span class="token punctuation">)</span>  <span class="token comment"># Lecture du fichier .ini</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>parser<span class="token punctuation">.</span>sections<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># Lister les sections du fichier</span>
+apache_options <span class="token operator">=</span> parser<span class="token punctuation">.</span>options<span class="token punctuation">(</span><span class="token string">"Apache"</span><span class="token punctuation">)</span>  <span class="token comment"># Récupérer les options d'une section</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>apache_options<span class="token punctuation">)</span>
+apache_port <span class="token operator">=</span> parser<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"Apache"</span><span class="token punctuation">,</span> <span class="token string">"port"</span><span class="token punctuation">)</span>  <span class="token comment"># Récupérer une valeur dans une section</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>apache_port<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="écriture-2">Écriture</h3>
+<p>Écrire un fichier <code>.ini</code> est aussi simple que de le lire :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> os
+<span class="token keyword">from</span> configparser <span class="token keyword">import</span> ConfigParser
+basedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>basedir<span class="token punctuation">,</span> <span class="token string">'test.ini'</span><span class="token punctuation">)</span>
+parser <span class="token operator">=</span> ConfigParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span>add_section<span class="token punctuation">(</span><span class="token string">'TimeMachine'</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">'TimeMachine'</span><span class="token punctuation">,</span> <span class="token string">'Model'</span><span class="token punctuation">,</span> <span class="token string">'DMC-12'</span><span class="token punctuation">)</span>
+parser<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">'TimeMachine'</span><span class="token punctuation">,</span> <span class="token string">'Speed'</span><span class="token punctuation">,</span> <span class="token string">'88'</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> ini_file<span class="token punctuation">:</span>
+    parser<span class="token punctuation">.</span>write<span class="token punctuation">(</span>ini_file<span class="token punctuation">)</span>
+</code></pre>
+<p>Ce qui nous donne le fichier de sortie suivant :</p>
+<pre><code>[TimeMachine]  
+model = DMC-12  
+speed = 88
+</code></pre>
+<h1 id="requests">6 - Requests</h1>
+<p>Requests c’est la bibliothèque qui nous permet de travailler avec le HTTP de manière “naturelle” .<br>
+D’ailleurs la description parle d’elle même.<br>
+Requests: HTTP for Humans<br>
+<a href="http://docs.python-requests.org/en/master/">http://docs.python-requests.org/en/master/</a><br>
+Elle nous permet d’utiliser les 5 verbes HTTP</p>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>PUT</li>
+<li>PATCH</li>
+<li>DELETE</li>
+</ul>
+<h2 id="installation-1">Installation</h2>
+<p>Il suffit juste de faire un pip install :</p>
+<pre><code>pip install requests
+</code></pre>
+<h2 id="opérations-http">Opérations HTTP</h2>
+<h3 id="service-de-test">Service de test</h3>
+<p>Un micro service REST est fourni afin d’illustrer l’ensemble des opérations HTTP.<br>
+<a href="https://github.com/averdier/py_sample_chat_service">https://github.com/averdier/py_sample_chat_service</a></p>
+<h3 id="opération--get">Opération : GET</h3>
+<p>Récupérer une information en HTTP à l’aide de <code>get</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> requests
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>La sortie est un <strong>objet</strong>, nous aborderons cette notion lors de la prochaine formation, les choses à savoir pour le moment c’est qu’une réponse contient plusieurs informations :</p>
+<ul>
+<li>Le code HTTP</li>
+<li>Le texte de la réponse</li>
+<li>Une version JSON si le format attendu est un JSON</li>
+</ul>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> requests
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages/'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+<span class="token number">200</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token string">"messages"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> json
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token string">"messages"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">'messages'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'dict'</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<h3 id="opération--post">Opération : POST</h3>
+<p>La méthode <code>post</code> nous permet d’envoyer des données en HTTP.<br>
+Un <code>post</code> retourne une réponse nous permettant de savoir si notre opération est un succès ou non.</p>
+<h4 id="json-1">JSON</h4>
+<p>Il est très simple d’envoyer des données JSON à l’aide de <code>post</code> et en indiquant le paramètres <code>json</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'title'</span><span class="token punctuation">:</span> <span class="token string">'Un super titre'</span><span class="token punctuation">,</span> <span class="token string">'body'</span><span class="token punctuation">:</span> <span class="token string">'Notre message'</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages/'</span><span class="token punctuation">,</span> json<span class="token operator">=</span>payload<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>text
+<span class="token string">'{\n    "body": "Notre message",\n    "id": 1,\n    "updated_at": null,\n    "title": "Un super titre",\n    "created_at": "2018-04-30T08:14:07.672792"\n}\n'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">:</span> <span class="token string">'Un super titre'</span><span class="token punctuation">,</span> <span class="token string">'updated_at'</span><span class="token punctuation">:</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">'created_at'</span><span class="token punctuation">:</span> <span class="token string">'2018-04-30T08:14:07.672792'</span><span class="token punctuation">,</span> <span class="token string">'body'</span><span class="token punctuation">:</span> <span class="token string">'Notre message'</span><span class="token punctuation">}</span>
+</code></pre>
+<h4 id="form-data">Form-data</h4>
+<p>Envoyer des données en <strong>form-data</strong> est tout aussi simple, il suffit de remplacer <code>json</code> par <code>data</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'username'</span><span class="token punctuation">:</span> <span class="token string">'my_username'</span><span class="token punctuation">,</span> <span class="token string">'secret'</span><span class="token punctuation">:</span> <span class="token string">'my_secret'</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/auth/'</span><span class="token punctuation">,</span> data<span class="token operator">=</span>payload<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>
+</code></pre>
+<h3 id="put--patch">Put != Patch</h3>
+<p><code>put</code> est à utiliser pour modifier l’intégralité des informations de l’élément quand <code>path</code> est à utiliser quand on souhaite modifier une information précise.</p>
+<h3 id="opération--put">Opération : PUT</h3>
+<p>La méthode <code>put</code> nous permet de modifier un élément existant.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'title'</span><span class="token punctuation">:</span> <span class="token string">'Un super titre avec modif'</span><span class="token punctuation">,</span> <span class="token string">'body'</span><span class="token punctuation">:</span> <span class="token string">'Notre message'</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages/1'</span><span class="token punctuation">,</span> json<span class="token operator">=</span>payload<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"updated_at"</span><span class="token punctuation">:</span> <span class="token string">"2018-04-30T08:29:19.089010"</span><span class="token punctuation">,</span>
+    <span class="token string">"created_at"</span><span class="token punctuation">:</span> <span class="token string">"2018-04-30T07:04:42.238701"</span><span class="token punctuation">,</span>
+    <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Un super titre avec modif"</span><span class="token punctuation">,</span>
+    <span class="token string">"body"</span><span class="token punctuation">:</span> <span class="token string">"Notre message"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="opération--patch">Opération : PATCH</h3>
+<p>La méthode <code>patch</code> nous permet de modifier une ou plusieurs information(s) d’un élément existant.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> payload <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'body'</span><span class="token punctuation">:</span> <span class="token string">'Notre message via PATCH'</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>patch<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages/1'</span><span class="token punctuation">,</span> json<span class="token operator">=</span>payload<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"updated_at"</span><span class="token punctuation">:</span> <span class="token string">"2018-04-30T08:30:13.636239"</span><span class="token punctuation">,</span>
+    <span class="token string">"created_at"</span><span class="token punctuation">:</span> <span class="token string">"2018-04-30T07:04:42.238701"</span><span class="token punctuation">,</span>
+    <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"Un super titre avec modif"</span><span class="token punctuation">,</span>
+    <span class="token string">"body"</span><span class="token punctuation">:</span> <span class="token string">"Notre message via PATCH"</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<h3 id="opération--delete">Opération : DELETE</h3>
+<p>La méthode <code>delete</code> nous permet de supprimer un élément.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/api/messages/1'</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">204</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>    <span class="token comment"># 204 indique un succès</span>
+</code></pre>
+<h2 id="authentification">Authentification</h2>
+<p>Il faut bien souvent être authentifié pour accéder à une information, deux méthodes d’authentification souvent rencontrées sont :</p>
+<ul>
+<li>Basic auth</li>
+<li>Token dans le header</li>
+</ul>
+<h3 id="basic-auth">Basic auth</h3>
+<p>Dans une authentification basic, il faut fournir un <code>client_id</code> et un <code>client_secret</code>.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> requests<span class="token punctuation">.</span>auth <span class="token keyword">import</span> HTTPBasicAuth
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/basic/messages/'</span><span class="token punctuation">,</span> auth<span class="token operator">=</span>HTTPBasicAuth<span class="token punctuation">(</span><span class="token string">'elonet'</span><span class="token punctuation">,</span> <span class="token string">'elonet'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse
+<span class="token operator">&lt;</span>Response <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>text
+<span class="token string">'{\n    "messages": []\n}\n'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">'messages'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="bearer">Bearer</h3>
+<p>Dans une authentification token, il faut fournir un <code>token</code> dans le header.<br><br>
+Le service fournis pour illustration nécessite que le <code>token</code> soit précédé du mot clé <code>Bearer</code><br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> token <span class="token operator">=</span> <span class="token string">'1DB1D3CF2FC65'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Authorization'</span><span class="token punctuation">:</span> <span class="token string">'Bearer '</span> <span class="token operator">+</span> token<span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://localhost:5555/bearer/messages/'</span><span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> reponse<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">'messages'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Avec <code>requests</code> le HTTP est une formalité en Python, le code est clair et les données facilement accessibles.</p>
+<h1 id="docopt">7 - DocOpt</h1>
+<p>DocOpt est une bibliothèque qui nous permet de facilement traiter les arguments fournis à un programme python en échange d’une documentation de notre part.<br>
+Elle à 3 avantages :</p>
+<ul>
+<li>Elle nous oblige à réaliser une documentation normalisée pour nos programmes</li>
+<li>Elle rend la gestion des arguments vraiment très simple</li>
+<li>Elle possède un testeur en ligne : <a href="http://try.docopt.org">try.docopt.org</a></li>
+</ul>
+<h2 id="exemple-sans-docopt">Exemple sans DocOpt</h2>
+<p>Exemple d’un script calculant le carré d’un nombre</p>
+<blockquote>
+<p>Source : <a href="https://docs.python.org/fr/3/howto/argparse.html">https://docs.python.org/fr/3/howto/argparse.html</a></p>
+</blockquote>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> argparse  
+<span class="token comment"># From https://docs.python.org/fr/3/howto/argparse.html</span>
+  
+<span class="token comment"># Définition des arguments</span>
+parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"square"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"display a square of a given number"</span><span class="token punctuation">)</span>  
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-v"</span><span class="token punctuation">,</span> <span class="token string">"--verbosity"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span> choices<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"increase output verbosity"</span><span class="token punctuation">)</span>  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+  <span class="token comment"># Traitement des arguments</span>
+  args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+  answer <span class="token operator">=</span> args<span class="token punctuation">.</span>square<span class="token operator">**</span><span class="token number">2</span>  
+  
+  <span class="token keyword">if</span> args<span class="token punctuation">.</span>verbosity <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>  
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"the square of {} equals {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">elif</span> args<span class="token punctuation">.</span>verbosity <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>  
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}^2 == {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>square<span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">else</span><span class="token punctuation">:</span>  
+      <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span>
+</code></pre>
+<p>La définition des arguments est faite à travers nos instructions, ce qui rend la relecture assez lourde lors d’un grand nombre d’arguments.</p>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python square.py -h
+usage: square.py [-h] [-v {0,1,2}] square
+positional arguments:
+  square                display a square of a given number
+optional arguments:
+  -h, --help            show this help message and exit
+  -v {0,1,2}, --verbosity {0,1,2}
+                        increase output verbosity
+(venv) techsys_1&gt;python square.py 4 -v 2
+the square of 4 equals 16
+</code></pre>
+<h2 id="exemple-avec-docopt">Exemple avec DocOpt</h2>
+<p>DocOpt opte pour un fonctionnement différent, la bibliothèque détermine les arguments à travers notre documentation.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Square Calculator.  
+  
+Usage:  
+ squareopt.py &lt;number&gt; [--verbose=&lt;verbose_level&gt;]
+ squareopt.py -h | --help 
+ squareopt.py --version  
+Options:  
+ -h --help                  Show this screen.
+ --version                  Show version.
+ --verbose=&lt;verbose_level&gt;  Verbose level [default: 0].
+ """</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">,</span> version<span class="token operator">=</span><span class="token string">'1.0'</span><span class="token punctuation">)</span>  
+  
+    answer <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token string">'&lt;number&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>  
+    v_level <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token string">'--verbose'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  
+  
+    <span class="token keyword">if</span> v_level <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>  
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"the square of {} equals {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token string">'&lt;number&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">elif</span> v_level <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>  
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}^2 == {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token string">'&lt;number&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> answer<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token keyword">else</span><span class="token punctuation">:</span>  
+        <span class="token keyword">print</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span>
+</code></pre>
+<p>La définition des arguments est faite à travers notre documentation ce qui rend la relecture extrêmement simple.<br>
+Sortie:</p>
+<pre><code>(venv) techsys_1&gt;python squareopt.py
+Usage:
+  squareopt.py &lt;number&gt; [--verbose=&lt;verbose_level&gt;]
+  squareopt.py -h | --help
+  squareopt.py --version
+(venv) techsys_1&gt;python squareopt.py 4 --verbose=2
+the square of 4 equals 16
+</code></pre>
+<h2 id="installation-2">Installation</h2>
+<p>Il suffit juste de faire un pip install.</p>
+<pre><code>pip install docopt
+</code></pre>
+<h2 id="structure-1">Structure</h2>
+<p>La documentation doit au minimum contenir le mot clé <code>Usage</code> suivi du nom du programme.<br>
+Exemple pour un ficher <code>opt.py</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Usage: opt.py  
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>Ici arguments est un dictionnaire vide car il n’y a aucun argument défini dans notre documentation</p>
+</blockquote>
+<h3 id="arguments">Arguments</h3>
+<p>Un argument commence par <code>&lt;</code> et finis par <code>&gt;</code> et doit avoir un nom unique.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Usage: opt.py &lt;banana&gt;  
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">)</span>  
+  
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token string">'&lt;banana&gt;'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Banana !'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python opt.py 3
+Banana !
+Banana !
+Banana !
+</code></pre>
+<p>Il est tout à fait possible d’avoir une suite d’arguments.</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Usage: opt.py &lt;banana&gt; &lt;tomato&gt;  
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">)</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python opt.py 3 5
+{'&lt;banana&gt;': '3',
+ '&lt;tomato&gt;': '5'}
+</code></pre>
+<h3 id="paramètres-optionnels">Paramètres optionnels</h3>
+<p>Les paramètres optionnels sont balisés par <code>[</code> et <code>]</code><br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Usage: opt.py &lt;banana&gt; [--save]  # Les crochets indiquent une option
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">)</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python opt.py 3 --save
+{'--save': True,
+ '&lt;banana&gt;': '3'}
+(venv) techsys_1&gt;python opt.py 3
+{'--save': False,
+ '&lt;banana&gt;': '3'}
+</code></pre>
+<p>Dans le cas de plusieurs paramètres optionnels <code>[--opt1 --opt2]</code> et équivalent à <code>[--opt1] [--opt2]</code></p>
+<h3 id="paramètres-obligatoires">Paramètres obligatoires</h3>
+<p>Les paramètres obligatoires sont balisés par <code>(</code> et <code>)</code>, il est possible de réaliser un <strong>ou</strong> à l’aide de <code>|</code><br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Usage: opt.py &lt;banana&gt; (--save &lt;filename&gt; | &lt;output&gt;)  
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">)</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python opt.py 3
+Usage: opts.py &lt;banana&gt; (--save &lt;filename&gt; | &lt;output&gt;)
+(venv) techsys_1&gt;python opt.py 3 json
+{'--save': False,
+ '&lt;banana&gt;': '3',
+ '&lt;filename&gt;': None,
+ '&lt;output&gt;': 'json'}
+</code></pre>
+<h3 id="valeurs-par-défaut">Valeurs par défaut</h3>
+<p>Il est possible de spécifier la valeur par défaut d’une option en l’indiquant dans la description.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Square Calculator.  
+  
+Usage:  
+ squareopt.py &lt;number&gt; [--verbose=&lt;verbose_level&gt;]  
+Options:  
+ --verbose=&lt;verbose_level&gt;  Verbose level [default: 0].
+"""</span>  
+  
+<span class="token keyword">from</span> docopt <span class="token keyword">import</span> docopt  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    arguments <span class="token operator">=</span> docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">,</span> version<span class="token operator">=</span><span class="token string">'1.0'</span><span class="token punctuation">)</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python squareopt.py 3
+{'--verbose': '0',
+ '&lt;number&gt;': '3'}
+</code></pre>
+<h2 id="hack">Hack</h2>
+<p>Nous avons vu que DocOpt nous permet de facilement traiter les arguments, malheureusement par défaut si le format des arguments n’est pas celui attendu, DocOpt quitte notre programme en nous rappelant le format attendu.<br>
+Imaginons un bot Slack qui attend des arguments, nous ne souhaitons pas que celui-ci termine son exécution si l’utilisateur entre une mauvaise commande.<br>
+Nous pouvons remplacer l’arrêt du programme par une exception que nous pourrons traiter dans notre code.<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token triple-quoted-string string">"""  
+Square Calculator.  
+  
+Usage:  
+ squareopt.py &lt;number&gt; [--verbose=&lt;verbose_level&gt;]  
+Options:  
+ --verbose=&lt;verbose_level&gt;  Verbose level [default: 0]."""</span>  
+  
+<span class="token keyword">import</span> docopt  <span class="token comment"># On importe la bibliothèque complète</span>
+  
+  
+<span class="token keyword">class</span> <span class="token class-name">MyExit</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    usage <span class="token operator">=</span> <span class="token string">''</span>  
+  
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        Exception<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">(</span>message <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>usage<span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+  
+  
+docopt<span class="token punctuation">.</span>DocoptExit <span class="token operator">=</span> MyExit  <span class="token comment"># On redéfini le comportement d'une erreur</span>
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+    fake_arguments <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">]</span>  <span class="token comment"># On invente de faux arguments</span>
+  
+    <span class="token keyword">try</span><span class="token punctuation">:</span>  
+        arguments <span class="token operator">=</span> docopt<span class="token punctuation">.</span>docopt<span class="token punctuation">(</span>__doc__<span class="token punctuation">,</span> argv<span class="token operator">=</span>fake_arguments<span class="token punctuation">)</span>  
+        <span class="token keyword">print</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>  
+  
+    <span class="token keyword">except</span> MyExit <span class="token keyword">as</span> ex<span class="token punctuation">:</span>  <span class="token comment"># On catch notre exception</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Exception: Wrong argument.'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Sortie :</p>
+<pre><code>(venv) techsys_1&gt;python squareopts.py
+Exception: Wrong argument.
+</code></pre>
+<h1 id="multi-fichier">8 - Multi fichier</h1>
+<p>Plus notre programme devient complexe plus il y a de code et plus notre fichier <code>.py</code> devient illisible.<br>
+Pour remédier à cela, on découpe notre programme en plusieurs fichiers spécialisés.<br>
+C’est le principe de la bibliothèque appliqué à notre programme.</p>
+<h2 id="modules">Modules</h2>
+<p>Un module est un ensemble de fonctions réunies dans un fichier <code>.py</code><br>
+Exemple d’un module <code>mymath.py</code> :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">square</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+  <span class="token triple-quoted-string string">"""
+  Return square of number
+  
+  :param number:  
+  :type number: float|int 
+   
+  :return: Square of number  
+  :rtype: float|int  
+   """</span>
+   <span class="token keyword">return</span> number <span class="token operator">*</span> number
+</code></pre>
+<p>Exemple d’appel de notre module :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># app.py</span>
+<span class="token keyword">from</span> mymath <span class="token keyword">import</span> square  <span class="token comment"># On importe square depuis le fichier mymath</span>
+ 
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+  n <span class="token operator">=</span> <span class="token number">3</span>  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Square of {0} = {1}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> square<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Ici les fichier sont dans le même dossier</p>
+<pre><code>. .. app.py mymath.py
+</code></pre>
+<h2 id="packages">Packages</h2>
+<p>Les packages sont des dossiers contenant 1 ou plusieurs modules, le but étant de ranger le plus proprement possible notre code.<br>
+Pour que Python considère un dossier comme un package, il faut ajouter un fichier <code>__init__.py</code>, celui-ci est souvent vide.<br>
+Reprenons l’exemple des math, grâce au package nous pouvons définir un <strong>package</strong> <code>mymath</code> qui contiendrait 2 <strong>module</strong> :</p>
+<ul>
+<li><code>arith.py</code> qui contiendrait les fonctions arithmétiques</li>
+<li><code>geom.py</code> qui contiendrait les fonctions géométriques<br>
+Exemple :</li>
+</ul>
+<pre><code># Arboresence 
+app.py
+mymath
+  __init__.py  # Vide
+  arith.py
+  geom.py
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># arith.py</span>
+<span class="token keyword">def</span> <span class="token function">square</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+  <span class="token triple-quoted-string string">"""
+  Return square of number 
+   
+  :param number:
+  :type number: float|int
+  
+  :return: Square of number  
+  :rtype: float|int
+  """</span>
+  <span class="token keyword">return</span> number <span class="token operator">*</span> number
+</code></pre>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># geom.py</span>
+<span class="token keyword">def</span> <span class="token function">perimeter</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""
+  Return perimeter of square or rect
+  
+  :param length:
+  :type length: float|int
+  :param width:
+  :type width: float|int
+  
+  :return: Perimeter
+  :rtype: float|int
+  """</span>
+  <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> length <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> width
+</code></pre>
+<h3 id="import-spécifique">Import spécifique</h3>
+<p>Il est possible de spécifier les fonctions à utiliser en faisant <code>from &lt;mon_package&gt;.&lt;mon_module&gt; import &lt;ma_fonction&gt;</code></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># app.py</span>
+<span class="token keyword">from</span> mymath<span class="token punctuation">.</span>arith <span class="token keyword">import</span> square  
+<span class="token keyword">from</span> mymath<span class="token punctuation">.</span>geom <span class="token keyword">import</span> perimeter  
+  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+  n <span class="token operator">=</span> <span class="token number">3</span>  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Square of {0} = {1}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> square<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+  
+  length <span class="token operator">=</span> <span class="token number">7</span>  
+  width <span class="token operator">=</span> <span class="token number">8</span>  
+  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Perimeter of {0}l {1}w = {2}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">,</span> perimeter<span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="import-complet-dun-module">Import complet d’un module</h3>
+<p>Il est aussi possible d’importer un module complet en faisant <code>import &lt;mon_package&gt;.&lt;mon_mondule&gt;</code>, il faudra ensuite faire <code>&lt;mon_module&gt;.&lt;ma_fonction&gt;</code> pour utiliser la fonction<br>
+Exemple:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> mymath <span class="token keyword">import</span> arith  
+<span class="token keyword">from</span> mymath <span class="token keyword">import</span> geom  
+  
+  
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>  
+  n <span class="token operator">=</span> <span class="token number">3</span>  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Square of {0} = {1}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> arith<span class="token punctuation">.</span>square<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+  
+  length <span class="token operator">=</span> <span class="token number">7</span>  
+  width <span class="token operator">=</span> <span class="token number">8</span>  
+  
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Perimeter of {0}l {1}w = {2}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">,</span> geom<span class="token punctuation">.</span>perimeter<span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="exercices">9 - Exercices</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Créer une calculette basique qui permettra de réaliser les opérations <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>.<br>
+Le programme devra comporter au moins les 2 fonctions suivantes :</p>
+<ul>
+<li><code>ask_operation</code> qui demandera à l’utilisateur l’opération qu’il souhaite réaliser</li>
+<li><code>ask_number_value</code> qui demandera un nombre à l’utilisateur<br>
+Tant que l’utilisateur ne souhaite pas quitter, le programme proposera de réaliser une opération.<br>
+La gestion d’une mauvaise entrée utilisateur devra être traitée.</li>
+</ul>
+<h3 id="résultat-attendu">Résultat attendu</h3>
+<pre><code>== Calcultette ==
+Entrez une opération ( + | - | / | * ) : +
+Entrez le nombre 1 : 10
+Entrez le nombre 2 : 3
+10.0 + 3.0 = 13.0
+Voulez vous continuer ? ( yes | no ) : yes
+Entrez une opération ( + | - | / | * ) : /
+Entrez le nombre 1 : 33
+Entrez le nombre 2 : 0
+&lt;!&gt; Division par zéro impossible
+33.0 / 0.0 = None
+Voulez vous continuer ? ( yes | no ) : yes
+Entrez une opération ( + | - | / | * ) : *
+Entrez le nombre 1 : 2
+Entrez le nombre 2 : 3.6
+2.0 * 3.6 = 7.2
+Voulez vous continuer ? ( yes | no ) : no
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>Créer un script de monitoring de la RAM d’un ordinateur qui envoie les données sur un micro service web.<br>
+La configuration du serveur sera stockée dans un fichier de configuration de votre choix.<br>
+Le script enverra les données au serveur toutes les 30 secondes et affichera dans la console :</p>
+<ul>
+<li>Les données envoyées</li>
+<li>La réponse du serveur</li>
+</ul>
+<h3 id="time">Time</h3>
+<p>La bibliothèque <code>time</code> nous permet de connaitre le timestamp et de mettre en pause notre programme<br>
+Exemple :</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> time
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment"># Lecture du temps</span>
+<span class="token number">1525335902.3408737</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># Pause pendant 1 seconde</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">1525335911.697184</span>
+</code></pre>
+<h3 id="micro-service-web">Micro service web</h3>
+<p>Le micro service est disponible à l’adresse suivante (lire le readme pour l’installation) :<br>
+<a href="https://github.com/averdier/py_sample_monitor_service">https://github.com/averdier/py_sample_monitor_service</a></p>
+<h3 id="accès-aux-données-de-la-machine">Accès aux données de la machine</h3>
+<p>Pour accéder aux données de la machine il est possible d’utiliser la bibliothèque <code>psutil</code> accessible via pip<br>
+Exemple permettant de connaitre l’état de la mémoire vive de la machine:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> psutil
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> psutil<span class="token punctuation">.</span>virtual_memory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+svmem<span class="token punctuation">(</span>total<span class="token operator">=</span><span class="token number">17101164544</span><span class="token punctuation">,</span> available<span class="token operator">=</span><span class="token number">8735653888</span><span class="token punctuation">,</span> percent<span class="token operator">=</span><span class="token number">48.9</span><span class="token punctuation">,</span> used<span class="token operator">=</span><span class="token number">8365510656</span><span class="token punctuation">,</span> free<span class="token operator">=</span><span class="token number">8735653888</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> current_memory <span class="token operator">=</span> psutil<span class="token punctuation">.</span>virtual_memory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>current_memory<span class="token punctuation">.</span>available<span class="token punctuation">)</span>
+<span class="token number">8840990720</span>
+</code></pre>
+<h3 id="résultat-attendu-1">Résultat attendu</h3>
+<pre><code>Envoi de : {'timestamp': 1525680061, 'device_id': 'pythonbook', 'percent': 44.7, 'free': 9261436928, 'total': 17101164544, 'used': 7604871168, 'available': 9454538752} : Response 200
+Envoi de : {'timestamp': 1525680061, 'device_id': 'pythonbook', 'percent': 44.7, 'free': 9261436928, 'total': 17101164544, 'used': 7604871168, 'available': 9454538752} : Response 200
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Créer un CLI permettant d’afficher les données de monitoring de RAM de l’exercice précédant, celui ci devra permettre :</p>
+<ul>
+<li>Le filtrage par <code>device_id</code></li>
+<li>Le filtrage par <code>percent</code> au-dessus ou en dessous d’une valeur fournie en argument<br>
+Les fonctions d’accès aux données et les fonctions d’affichage devront être dans des modules séparés.</li>
+</ul>
+<h3 id="accès-aux-données">Accès aux données</h3>
+<p>Le micro service web <a href="https://github.com/averdier/py_sample_monitor_service">https://github.com/averdier/py_sample_monitor_service</a> permet le filtrage des données via des arguments dans la requête.</p>
+<ul>
+<li>GET <code>/api/memory/</code> : Retourne l’ensemble de l’historique</li>
+<li>GET  <code>/api/memory/?device_id=&lt;device_id&gt;'</code> : Retourne l’historique d’un device</li>
+<li>GET  <code>/api/memory/?percent=&lt;over | below&gt;&amp;target=&lt;your_target&gt;'</code> : Retourne l’historique en filtrant par pourcentage en dessous ou au-dessus d’une valeur</li>
+<li>GET <code>/api/memory/?device_id=&lt;device_id&gt;&amp;percent=&lt;over | below&gt;&amp;target=&lt;your_target&gt;'</code> :  L’ensemble des arguments est possible aussi</li>
+</ul>
+<h3 id="terminaltables">Terminaltables</h3>
+<p>Terminaltables est une bibliothèque très pratique quand il s’agit d’afficher des choses sous forme de tableau</p>
+<h4 id="installation-3">Installation</h4>
+<pre><code>pip install terminaltables
+</code></pre>
+<h4 id="usage-5">Usage</h4>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> terminaltables <span class="token keyword">import</span> AsciiTable
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> head <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Number'</span><span class="token punctuation">,</span> <span class="token string">'Square'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>i<span class="token punctuation">,</span> i<span class="token operator">*</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> table_data <span class="token operator">=</span> <span class="token punctuation">[</span>head<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> table_data
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Number'</span><span class="token punctuation">,</span> <span class="token string">'Square'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> table_data<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> table_data
+<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Number'</span><span class="token punctuation">,</span> <span class="token string">'Square'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> table <span class="token operator">=</span> AsciiTable<span class="token punctuation">(</span>table_data<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>table<span class="token punctuation">)</span>
+<span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span>
+<span class="token operator">|</span> Number <span class="token operator">|</span> Square <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span>
+<span class="token operator">|</span> <span class="token number">1</span>      <span class="token operator">|</span> <span class="token number">1</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>      <span class="token operator">|</span> <span class="token number">4</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>      <span class="token operator">|</span> <span class="token number">9</span>      <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>      <span class="token operator">|</span> <span class="token number">16</span>     <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>      <span class="token operator">|</span> <span class="token number">25</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">+</span>
+</code></pre>
+<h3 id="résultat-attendu-2">Résultat attendu</h3>
+<pre><code>(venv) seance_1&gt;python exercice3.py show ram -p over 43
++----+------------+------------+---------+------------+------------+------------+
+| ID | Timestamp  | Device     | Percent | Available  | Used       | Free       |
++----+------------+------------+---------+------------+------------+------------+
+| 60 | 1525679458 | pythonbook | 43.0    | 9755967488 | 7303442432 | 9562865664 |
+| 62 | 1525679519 | pythonbook | 43.2    | 9715671040 | 7343738880 | 9522569216 |
+| 66 | 1525679639 | pythonbook | 43.2    | 9713807360 | 7345602560 | 9520705536 |
+| 72 | 1525679820 | pythonbook | 43.0    | 9752932352 | 7306477568 | 9559830528 |
+| 73 | 1525679850 | pythonbook | 43.2    | 9716289536 | 7343120384 | 9523187712 |
+| 74 | 1525679880 | pythonbook | 43.2    | 9709764608 | 7349645312 | 9516662784 |
+| 75 | 1525679910 | pythonbook | 43.3    | 9691828224 | 7367581696 | 9498726400 |
+| 76 | 1525679940 | pythonbook | 43.6    | 9646718976 | 7412690944 | 9453617152 |
+| 77 | 1525679970 | pythonbook | 43.6    | 9651335168 | 7408074752 | 9458233344 |
+| 78 | 1525680000 | pythonbook | 43.4    | 9671643136 | 7387766784 | 9478541312 |
++----+------------+------------+---------+------------+------------+------------+
+</code></pre>
+
+    </div>
+  </div>
+</body>
+
+</html>
